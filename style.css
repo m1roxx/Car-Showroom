@@ -161,9 +161,19 @@ html {
   border: 3px solid #fff;
 }
 
-#model-y-info,
-#model-y-footer {
+#model-info,
+#model-footer {
   opacity: 0;
   transform: translateY(50px);
   transition: 3s;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 }
