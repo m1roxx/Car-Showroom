@@ -5,21 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
   <link rel="stylesheet" href="contact.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 <body>
   <header class="header">
-    <nav id="navbar">
-      <ul class="nav-list">
-        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="models.html" class="nav-link">Models</a></li>
-        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+    <nav class="nav-container">
+      <a href="index.html">
+        <img class="logo" src="Images/Logo.png" alt="Logo" />
+      </a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="models.html">Models</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
-    </nav>
+      <div class="icons">
+        <i class="bx bx-help-circle"></i>
+        <i class="bx bx-globe"></i>
+        <i class="bx bx-user-circle"></i>
+      </div>
+    </nav>    
   </header>
 
   <section class="contact-section">
-    <h2>Contact Us</h2>
     <form action="#" class="contact-form">
+      <h2>Contact Us</h2>
       <label for="name">Name</label>
       <input type="text" id="name" class="form-input" required>
       
@@ -34,7 +43,8 @@
   </section>
 
   <footer>
-    <p>&copy; 2024 Tesla Clone | All Rights Reserved</p>
+    <p>Ilyas Nugmanov</p>
+    <p>Daniel Li</p>
   </footer>
 </body>
 </html>
