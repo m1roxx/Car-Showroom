@@ -5,95 +5,140 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="models.css" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Car Model Details</title>
   </head>
   <body>
-    <nav class="nav-container">
-      <a href="index.html">
-        <img class="logo" src="Images/Logo.png" alt="Logo" />
-      </a>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="models.html">Models</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="icons">
-        <i class="bx bx-help-circle"></i>
-        <i class="bx bx-globe"></i>
-        <i class="bx bx-user-circle"></i>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img class="logo" src="Images/Logo.png" alt="Logo" />
+        </a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="models.html">Models</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+          <div class="navbar-icons ms-auto d-lg-none">
+            <i class="bx bx-help-circle text-white mx-2"></i>
+            <i class="bx bx-globe text-white mx-2"></i>
+            <i class="bx bx-user-circle text-white mx-2"></i>
+          </div>
+        </div>
+        <div class="navbar-icons d-none d-lg-flex ms-auto">
+          <i class="bx bx-help-circle text-white mx-2"></i>
+          <i class="bx bx-globe text-white mx-2"></i>
+          <i class="bx bx-user-circle text-white mx-2"></i>
+        </div>
       </div>
     </nav>
 
-    <div class="model-container">
-      <div class="model-image">
-        <img src="https://car-images.bauersecure.com/wp-images/160900/cullinan_bb_s2_53.jpg" alt="Rolls-Royce Cullinan" />
+    <div class="container my-5">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="card">
+                  <img src="https://car-images.bauersecure.com/wp-images/160900/cullinan_bb_s2_53.jpg" class="card-img-top" alt="Rolls-Royce Cullinan">
+                  <div class="card-body">
+                      <h5 class="card-title">Rolls-Royce Cullinan</h5>
+                      <p class="card-text">Цена: $390,890</p>
+                      <a href="#" class="btn btn-primary">Order now</a>
+                      <a href="#" class="btn btn-secondary">Demo drive</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card">
+                  <img src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMHIspbWvanYb%255y%25oq%25vSTmjMXD4qAZeoNBPUSfUx4RmHlCgI7Zl2dioCtNvQDcFGDTMYnfurR5eV6iTCjFzhRc2GRdqAZ%25oD21P%25S1BAXmOnugTfeIJpV7nDhQS" class="card-img-top" alt="Porsche">
+                  <div class="card-body">
+                      <h5 class="card-title">Porsche 911 Turbo S</h5>
+                      <p class="card-text">Цена: $390,890</p>
+                      <a href="#" class="btn btn-primary">Order now</a>
+                      <a href="#" class="btn btn-secondary">Demo drive</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card">
+                  <img src="https://hips.hearstapps.com/hmg-prod/images/2025-mclaren-gts-action-101-6596fa2b97171.jpg?crop=0.619xw:0.618xh;0.285xw,0.205xh&resize=2048:*" class="card-img-top" alt="McLaren">
+                  <div class="card-body">
+                      <h5 class="card-title">McLaren GTS</h5>
+                      <p class="card-text">Цена: $224,890</p>
+                      <a href="#" class="btn btn-primary">Order now</a>
+                      <a href="#" class="btn btn-secondary">Demo drive</a>
+                  </div>
+              </div>
+          </div>
       </div>
-      <div class="model-specs">
-        <h1>Rolls-Royce Cullinan</h1>
-        <ul>
-          <li><strong>Объем двигателя:</strong> 6.75 литра</li>
-          <li><strong>Лошадиные силы:</strong> 563 л.с.</li>
-          <li><strong>Тип двигателя:</strong> V12 Twin Turbo</li>
-          <li><strong>Цена:</strong> $390,890</li>
-          <li><strong>Максимальная скорость:</strong> 250 км/ч</li>
-          <li><strong>Разгон 0-100 км/ч:</strong> 5.2 секунды</li>
-          <li><strong>Привод:</strong> Полный</li>
-        </ul>
-        <div class="buttons">
-          <button>Order Now</button>
-          <button>Demo Drive</button>
+  </div>
+  
+
+    <!-- Bootstrap Carousel -->
+    <div id="carCarousel" class="carousel slide" data-ride="carousel">
+      <!-- indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carCarousel" data-slide-to="1"></li>
+        <li data-target="#carCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- carousel items -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://www.topgear.com/sites/default/files/2023/09/33156-RS7PERFORMANCEASCARIBLUEJORDANBUTTERS132.jpg" class="d-block w-100" alt="Rolls-Royce Cullinan">
         </div>
+        <div class="carousel-item">
+          <img src="https://static1.topspeedimages.com/wordpress/wp-content/uploads/2023/08/2023-audi-rs7-sportback-performance.jpg" class="d-block w-100" alt="Porsche">
+        </div>
+        <div class="carousel-item">
+          <img src="https://www.motortrend.com/uploads/2023/06/2024-Audi-RS7-Sportback-performance-Ascari-blue-matt-front-view-059.jpg" class="d-block w-100" alt="Mercedes-Benz Maybach">
+        </div>
+        <div class="carousel-item">
+          <img src="https://www.audiusa.com/content/dam/nemo/ca/Models/rs7/MY25/1920x1080-MY25-RS7-performance-Interior-Driver-4362.jpg?width=1920" class="d-block w-100" alt="Mercedes-Benz Maybach">
+        </div>
+
       </div>
+
+      <!-- controls -->
+      <a class="carousel-control-prev" href="#carCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
 
-
-    <div class="model-container">
-      <div class="model-image">
-        <img src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMHIspbWvanYb%255y%25oq%25vSTmjMXD4qAZeoNBPUSfUx4RmHlCgI7Zl2dioCtNvQDcFGDTMYnfurR5eV6iTCjFzhRc2GRdqAZ%25oD21P%25S1BAXmOnugTfeIJpV7nDhQS" alt="porsche" />
-      </div>
-      <div class="model-specs">
-        <h1>Porsche 911 Turbo S</h1>
-        <ul>
-          <li><strong>Объем двигателя:</strong> 6.75 литра</li>
-          <li><strong>Лошадиные силы:</strong> 563 л.с.</li>
-          <li><strong>Тип двигателя:</strong> V12 Twin Turbo</li>
-          <li><strong>Цена:</strong> $390,890</li>
-          <li><strong>Максимальная скорость:</strong> 250 км/ч</li>
-          <li><strong>Разгон 0-100 км/ч:</strong> 5.2 секунды</li>
-          <li><strong>Привод:</strong> Полный</li>
-        </ul>
-        <div class="buttons">
-          <button>Order Now</button>
-          <button>Demo Drive</button>
-        </div>
-      </div>
+    <!-- car model details -->
+    <div class="model-specs">
+      <h1 class="model-title">Audi RS-7 Performance</h1>
+              <ul class="list-unstyled">
+                  <li><strong>Объем двигателя:</strong> 4 литра</li>
+                  <li><strong>Лошадиные силы:</strong> 650 л.с.</li>
+                  <li><strong>Тип двигателя:</strong> V8 Twin Turbo</li>
+                  <li><strong>Цена:</strong> $190,890</li>
+                  <li><strong>Максимальная скорость:</strong> 350 км/ч</li>
+                  <li><strong>Разгон 0-100 км/ч:</strong> 3.0 секунды</li>
+                  <li><strong>Привод:</strong> Полный Quattro</li>
+              </ul>
+              <div class="btn-group" role="group" aria-label="Button group">
+                  <button type="button" class="btn btn-primary">Order now</button>
+                  <button type="button" class="btn btn-secondary">Demo drive</button>
+              </div>
     </div>
-    
+<br><br><br>
 
-    <div class="model-container">
-      <div class="model-image">
-        <img src="https://media.ed.edmunds-media.com/mercedes-benz/maybach/2022/oem/2022_mercedes-benz_maybach_sedan_s-580-4matic_fq_oem_1_1600.jpg" alt="maybach" />
-      </div>
-      <div class="model-specs">
-        <h1>Mercedes-Benz Maybach</h1>
-        <ul>
-          <li><strong>Объем двигателя:</strong> 6.75 литра</li>
-          <li><strong>Лошадиные силы:</strong> 563 л.с.</li>
-          <li><strong>Тип двигателя:</strong> V12 Twin Turbo</li>
-          <li><strong>Цена:</strong> $390,890</li>
-          <li><strong>Максимальная скорость:</strong> 250 км/ч</li>
-          <li><strong>Разгон 0-100 км/ч:</strong> 5.2 секунды</li>
-          <li><strong>Привод:</strong> Полный</li>
-        </ul>
-        <div class="buttons">
-          <button>Order Now</button>
-          <button>Demo Drive</button>
-        </div>
-      </div>
-    </div>
+<footer class="bg-dark text-white text-center py-3">
+  <p>Ilyas Nugmanov &emsp; Daniel Li</p>
+</footer>
 
-    <footer>
-      <p>Ilyas Nugmanov &emsp; Daniel Li</p>
-    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

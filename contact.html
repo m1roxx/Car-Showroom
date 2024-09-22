@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,47 +6,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
   <link rel="stylesheet" href="contact.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 </head>
 <body>
-  <header class="header">
-    <nav class="nav-container">
-      <a href="index.html">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
         <img class="logo" src="Images/Logo.png" alt="Logo" />
       </a>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="models.html">Models</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="icons">
-        <i class="bx bx-help-circle"></i>
-        <i class="bx bx-globe"></i>
-        <i class="bx bx-user-circle"></i>
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="models.html">Models</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="navbar-icons ms-auto d-lg-none">
+          <i class="bx bx-help-circle text-white mx-2"></i>
+          <i class="bx bx-globe text-white mx-2"></i>
+          <i class="bx bx-user-circle text-white mx-2"></i>
+        </div>
       </div>
-    </nav>    
-  </header>
+      <div class="navbar-icons d-none d-lg-flex ms-auto">
+        <i class="bx bx-help-circle text-white mx-2"></i>
+        <i class="bx bx-globe text-white mx-2"></i>
+        <i class="bx bx-user-circle text-white mx-2"></i>
+      </div>
+    </div>
+  </nav>
 
-  <section class="contact-section">
-    <form action="#" class="contact-form">
-      <h2>Contact Us</h2>
-      <label for="name">Name</label>
-      <input type="text" id="name" class="form-input" required>
-      
-      <label for="email">Email</label>
-      <input type="email" id="email" class="form-input" required>
-      
-      <label for="message">Message</label>
-      <textarea id="message" class="form-input" rows="5" required></textarea>
-      
-      <button type="submit" class="submit-btn">Send Message</button>
-    </form>
+  <section class="contact-section container-fluid mt-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-12 col-md-8 col-sm-12">
+        <form action="#" class="contact-form p-4">
+          <h2 class="text-center mb-4">Contact Us</h2>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" class="form-control" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark btn-lg w-100">Send Message</button>
+        </form>
+      </div>
+    </div>
   </section>
 
-<br/><br/><br/>
+  <footer class="bg-dark text-white text-center py-3">
+    <p>Ilyas Nugmanov &emsp; Daniel Li</p>
+  </footer>
 
-<footer>
-  <p>Ilyas Nugmanov &emsp; Daniel Li</p>
-</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

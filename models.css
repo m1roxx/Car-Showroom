@@ -8,47 +8,11 @@
 }
 
 html, body {
-  height: 100%;
+  
   overflow-x: hidden;
 }
 
-.nav-container {
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding-right: 30px;
-  padding-left: 20px;
-  height: 60px;
-  color: #fff;
-  z-index: 1000;
-}
 
-.nav-container ul {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-  font-size: 15px;
-}
-
-.nav-container ul li {
-  cursor: pointer;
-  transition: 0.5s;
-  padding: 3px 10px;
-  border-radius: 5px;
-}
-
-a {
-  text-decoration: none;
-  color: #000000;
-}
-
-.nav-container ul li:hover,
-.nav-container .icons i:hover {
-  background-color: rgba(0, 0, 0, 0.5);
-}
 
 .logo {
   width: 120px;
@@ -95,7 +59,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: left;
+  text-align: center;
 }
 
 .model-specs h1 {
@@ -151,3 +115,35 @@ footer {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
   }
+
+  .model-container {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f8f9fa; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.model-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.model-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.model-specs ul {
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.btn-group .btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+}
+
+
+
