@@ -42,7 +42,7 @@
   <section class="contact-section container-fluid mt-5">
     <div class="row justify-content-center">
       <div class="col-lg-12 col-md-8 col-sm-12">
-        <form action="#" class="contact-form p-4">
+        <form id="contactForm" action="#" class="contact-form p-4">
           <h2 class="text-center mb-4">Contact Us</h2>
           <div class="mb-3">
             <label for="name" class="form-label">Name</label>
@@ -53,19 +53,31 @@
             <input type="email" id="email" class="form-control" required>
           </div>
           <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="confirmPassword" class="form-label">Confirm Password</label>
+            <input type="password" id="confirmPassword" class="form-control" required>
+          </div>
+          <div class="mb-3">
             <label for="message" class="form-label">Message</label>
             <textarea id="message" class="form-control" rows="5" required></textarea>
           </div>
           <button type="submit" class="btn btn-dark btn-lg w-100">Send Message</button>
+          <p id="error" class="text-danger mt-2"></p>
         </form>
       </div>
     </div>
   </section>
+  
 
   <footer class="bg-dark text-white text-center py-3">
     <p>Ilyas Nugmanov &emsp; Daniel Li</p>
   </footer>
 
+  <script src="contact.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  
 </body>
 </html>

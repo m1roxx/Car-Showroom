@@ -39,7 +39,17 @@
         </div>
       </nav>
 
+      <section class="todo-section container mt-5">
+          <h2 class="text-center mb-4">To-Do List</h2>
+          <div class="input-group mb-3">
+              <input type="text" id="taskInput" class="form-control" placeholder="Add a new task" aria-label="New task" aria-describedby="addTaskButton">
+              <div class="input-group-append">
+                  <button class="btn btn-primary" type="button" id="addTaskButton">Add Task</button>
+              </div>
+          </div>
+          <ul id="taskList" class="list-group"></ul>
+      </section>
 
-
+    <script src="todo.js"></script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+body {
+    background-image: url('media/repair_bg.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+}
+
+.todo-section {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.list-group-item.completed {
+    text-decoration: line-through;
+    background-color: #d4edda;
+}
+
+#taskInput {
+    height: 45px;
+}
+
+#addTaskButton {
+    height: 45px;
+}
