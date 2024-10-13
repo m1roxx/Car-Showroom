@@ -8,11 +8,8 @@
 }
 
 html, body {
-  
   overflow-x: hidden;
 }
-
-
 
 .logo {
   width: 120px;
@@ -116,7 +113,7 @@ footer {
     background-color: rgba(0, 0, 0, 0.7);
   }
 
-  .model-container {
+.model-container {
     margin: 20px 0;
     padding: 20px;
     background-color: #f8f9fa; 
@@ -146,4 +143,18 @@ footer {
 }
 
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
 

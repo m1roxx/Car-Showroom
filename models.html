@@ -23,6 +23,7 @@
             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="models.html">Models</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="repair.html">Repair and Maintenance</a></li>
           </ul>
           <div class="navbar-icons ms-auto d-lg-none">
             <i class="bx bx-help-circle text-white mx-2"></i>
@@ -38,38 +39,38 @@
       </div>
     </nav>
 
-    <div class="container my-5">
+    <div class="container my-5 my-lg-6">
       <div class="row">
-          <div class="col-md-4">
+          <div class="col-md-6 col-sm-2 col-lg-4 " >
               <div class="card">
                   <img src="https://car-images.bauersecure.com/wp-images/160900/cullinan_bb_s2_53.jpg" class="card-img-top" alt="Rolls-Royce Cullinan">
                   <div class="card-body">
                       <h5 class="card-title">Rolls-Royce Cullinan</h5>
                       <p class="card-text">Цена: $390,890</p>
-                      <a href="#" class="btn btn-primary">Order now</a>
-                      <a href="#" class="btn btn-secondary">Demo drive</a>
+                      <a href="contact.html" class="btn btn-primary">Order now</a>
+                      <a href="contact.html" class="btn btn-secondary">Demo drive</a>
                   </div>
               </div>
           </div>
-          <div class="col-md-4">
+          <div class=" col-md-6 col-sm-2 col-lg-4">
               <div class="card">
                   <img src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXkBuNYdMGF4tl3U0%25z8rMHIspbWvanYb%255y%25oq%25vSTmjMXD4qAZeoNBPUSfUx4RmHlCgI7Zl2dioCtNvQDcFGDTMYnfurR5eV6iTCjFzhRc2GRdqAZ%25oD21P%25S1BAXmOnugTfeIJpV7nDhQS" class="card-img-top" alt="Porsche">
                   <div class="card-body">
                       <h5 class="card-title">Porsche 911 Turbo S</h5>
                       <p class="card-text">Цена: $390,890</p>
-                      <a href="#" class="btn btn-primary">Order now</a>
-                      <a href="#" class="btn btn-secondary">Demo drive</a>
+                      <a href="contact.html" class="btn btn-primary">Order now</a>
+                      <a href="contact.html" class="btn btn-secondary">Demo drive</a>
                   </div>
               </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-6 col-sm-2 col-lg-4">
               <div class="card">
                   <img src="https://hips.hearstapps.com/hmg-prod/images/2025-mclaren-gts-action-101-6596fa2b97171.jpg?crop=0.619xw:0.618xh;0.285xw,0.205xh&resize=2048:*" class="card-img-top" alt="McLaren">
                   <div class="card-body">
                       <h5 class="card-title">McLaren GTS</h5>
                       <p class="card-text">Цена: $224,890</p>
-                      <a href="#" class="btn btn-primary">Order now</a>
-                      <a href="#" class="btn btn-secondary">Demo drive</a>
+                      <a href="contact.html" class="btn btn-primary">Order now</a>
+                      <a href="contact.html" class="btn btn-secondary">Demo drive</a>
                   </div>
               </div>
           </div>
@@ -100,16 +101,15 @@
         <div class="carousel-item">
           <img src="https://www.audiusa.com/content/dam/nemo/ca/Models/rs7/MY25/1920x1080-MY25-RS7-performance-Interior-Driver-4362.jpg?width=1920" class="d-block w-100" alt="Mercedes-Benz Maybach">
         </div>
-
       </div>
 
       <!-- controls -->
       <a class="carousel-control-prev" href="#carCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="carousel-control-prev-icon"></span>
         <span class="sr-only">Previous</span>
       </a>
       <a class="carousel-control-next" href="#carCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="carousel-control-next-icon"></span>
         <span class="sr-only">Next</span>
       </a>
     </div>
@@ -131,8 +131,36 @@
                   <button type="button" class="btn btn-secondary">Demo drive</button>
               </div>
     </div>
-<br><br><br>
 
+    <label for="sortOption">Sort by:</label>
+    <select id="sortOption" onchange="sortCars()">
+        <option value="nameAsc">Name (A-Z)</option>
+        <option value="nameDesc">Name (Z-A)</option>
+        <option value="priceAsc">Price (Low to High)</option>
+        <option value="priceDesc">Price (High to Low)</option>
+        <option value="engineAsc">Engine Volume (Low to High)</option>
+        <option value="engineDesc">Engine Volume (High to Low)</option>
+    </select>
+
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Engine Volume (L)</th>
+                <th>Horse Power</th>
+                <th>Aviability</th>
+            </tr>
+        </thead>
+        <tbody id="carList">
+            
+        </tbody>
+    </table>
+
+    <script src="cars.js"></script>
+
+    <br><br><br>
 <footer class="bg-dark text-white text-center py-3">
   <p>Ilyas Nugmanov &emsp; Daniel Li</p>
 </footer>
