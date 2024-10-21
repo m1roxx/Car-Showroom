@@ -97,3 +97,17 @@ const dayNightToggle = document.getElementById('day-night-toggle');
 dayNightToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-theme');
 });
+
+
+// Read More Button
+const readMoreBtn = document.getElementById('read-more-btn');
+readMoreBtn.addEventListener('click', () => {
+  const moreInfo = document.getElementById('more-info');
+  if (moreInfo.style.display === 'none') {
+    moreInfo.style.display = 'block';
+    readMoreBtn.textContent = 'Read Less';
+  } else {
+    moreInfo.style.display = 'none';
+    readMoreBtn.textContent = 'Read More';
+  }
+});
