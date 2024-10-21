@@ -111,3 +111,10 @@ readMoreBtn.addEventListener('click', () => {
     readMoreBtn.textContent = 'Read More';
   }
 });
+
+
+const soundButton = document.getElementById('play-sound-btn');
+soundButton.addEventListener('click', () => {
+  const audio = new Audio('media/Revolution Performance 2021 Audi RS7 Power Package Dyno.mp3'); 
+  audio.play();
+});
