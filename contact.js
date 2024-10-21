@@ -32,4 +32,11 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     
     alert('Form submitted successfully!');
   });
+
+  document.getElementById('resetButton').addEventListener('click', function () {
+    document.querySelectorAll('input').forEach(input => input.value = '');
+    document.getElementById('message').value = ''; 
+    document.getElementById('error').textContent = ''; 
+  });
+  
   
