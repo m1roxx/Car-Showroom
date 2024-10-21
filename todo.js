@@ -40,3 +40,4 @@ document.getElementById('taskInput').addEventListener('keypress', function (e) {
         addTask();
     }
 });
+
