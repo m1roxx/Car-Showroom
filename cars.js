@@ -74,7 +74,26 @@ function sortCars() {
         case 'engineDesc':
             sortedCars.sort((a, b) => b.engineVolume - a.engineVolume);
             break;
+
+        case 'noDublicateEngineVolume':
+                sortedCars = sortedCars.reduce((newlist, car) => {
+                    if (!newlist.find(c => c.engineVolume === car.engineVolume)) {
+                        newlist.push(car);
+                    }
+                    return newlist;
+                }, []).sort((a, b) => a.engineVolume - b.engineVolume); ;
+                break;
+    
     }
 
     displayCars(sortedCars);
+
+
 }
+
+
+// Day/Night theme switcher
+const dayNightToggle = document.getElementById('day-night-toggle');
+dayNightToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+});
