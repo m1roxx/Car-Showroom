@@ -1,4 +1,5 @@
-document.getElementById('contactForm').addEventListener('submit', function (event) {
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('contactForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
     document.getElementById('error').textContent = '';
@@ -38,5 +39,72 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     document.getElementById('message').value = ''; 
     document.getElementById('error').textContent = ''; 
   });
-  
-  
+
+  document.addEventListener('keydown', function (event) {
+    const focusedElement = document.activeElement;
+    if (focusedElement.classList.contains('nav-link')) {
+      const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+      let currentIndex = navLinks.indexOf(focusedElement);
+      
+      if (event.key === 'ArrowRight') {
+        const nextIndex = (currentIndex + 1) % navLinks.length;
+        navLinks[nextIndex].focus();
+      } else if (event.key === 'ArrowLeft') {
+        const prevIndex = (currentIndex - 1 + navLinks.length) % navLinks.length;
+        navLinks[prevIndex].focus();
+      }
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const steps = document.querySelectorAll('.step');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  let currentStep = 0;
+
+  // Function to show the current step
+  function showStep(step) {
+    steps.forEach((s, index) => {
+      s.classList.toggle('active', index === step);
+    });
+    prevBtn.disabled = step === 0; // Disable "Back" on the first step
+    nextBtn.textContent = step === steps.length - 1 ? 'Submit' : 'Next'; // Change button text on last step
+  }
+
+  // Event listener for the Next button
+  nextBtn.addEventListener('click', () => {
+    const currentInputs = steps[currentStep].querySelectorAll('input, textarea');
+    let valid = true;
+
+    currentInputs.forEach(input => {
+      if (!input.checkValidity()) {
+        valid = false;
+      }
+    });
+
+    if (valid) {
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+      } else {
+        // Placeholder for form submission logic
+        alert('Form submitted successfully!'); // Replace with actual submission
+      }
+    } else {
+      document.getElementById('error').textContent = 'Please fill in all required fields correctly.';
+    }
+  });
+
+  // Event listener for the Back button
+  prevBtn.addEventListener('click', () => {
+    if (currentStep > 0) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  });
+
+  // Initialize the first step
+  showStep(currentStep);
+});
+
