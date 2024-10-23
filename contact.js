@@ -63,16 +63,14 @@ document.addEventListener('DOMContentLoaded', function () {
   const prevBtn = document.getElementById('prevBtn');
   let currentStep = 0;
 
-  // Function to show the current step
   function showStep(step) {
     steps.forEach((s, index) => {
       s.classList.toggle('active', index === step);
     });
-    prevBtn.disabled = step === 0; // Disable "Back" on the first step
-    nextBtn.textContent = step === steps.length - 1 ? 'Submit' : 'Next'; // Change button text on last step
+    prevBtn.disabled = step === 0; 
+    nextBtn.textContent = step === steps.length - 1 ? 'Submit' : 'Next'; 
   }
 
-  // Event listener for the Next button
   nextBtn.addEventListener('click', () => {
     const currentInputs = steps[currentStep].querySelectorAll('input, textarea');
     let valid = true;
@@ -88,15 +86,13 @@ document.addEventListener('DOMContentLoaded', function () {
         currentStep++;
         showStep(currentStep);
       } else {
-        // Placeholder for form submission logic
-        alert('Form submitted successfully!'); // Replace with actual submission
+        alert('Form submitted successfully!');
       }
     } else {
       document.getElementById('error').textContent = 'Please fill in all required fields correctly.';
     }
   });
 
-  // Event listener for the Back button
   prevBtn.addEventListener('click', () => {
     if (currentStep > 0) {
       currentStep--;
@@ -104,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Initialize the first step
   showStep(currentStep);
 });
 
