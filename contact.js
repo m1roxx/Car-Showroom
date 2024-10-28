@@ -35,10 +35,22 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   document.getElementById('resetButton').addEventListener('click', function () {
+    // Clear all input values
     document.querySelectorAll('input').forEach(input => input.value = '');
-    document.getElementById('message').value = ''; 
-    document.getElementById('error').textContent = ''; 
+    document.getElementById('message').value = '';
+    
+    // Reset error message
+    document.getElementById('error').textContent = '';
+  
+    // Reset step and update the UI
+    currentStep = 0;
+    showStep(currentStep);
+  
+    // Re-enable the "Next" button in case it was disabled on submission
+    nextBtn.disabled = false;
   });
+  
+  
 
   document.addEventListener('keydown', function (event) {
     const focusedElement = document.activeElement;

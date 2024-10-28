@@ -106,6 +106,7 @@ readMoreBtn.addEventListener('click', () => {
   if (moreInfo.style.display === 'none') {
     moreInfo.style.display = 'block';
     readMoreBtn.textContent = 'Read Less';
+
   } else {
     moreInfo.style.display = 'none';
     readMoreBtn.textContent = 'Read More';
@@ -118,3 +119,107 @@ soundButton.addEventListener('click', () => {
   const audio = new Audio('media/Revolution Performance 2021 Audi RS7 Power Package Dyno.mp3'); 
   audio.play();
 });
+
+
+const currentHour = new Date().getHours();
+let greeting;
+
+if (currentHour < 12) {
+  greeting = "Welcome to our Car Showroom! Start your morning with a luxury test drive.";
+} else if (currentHour < 18) {
+  greeting = "Good afternoon! Discover your dream car in our collection.";
+} else {
+  greeting = "Good evening! Explore the finest cars available in our showroom.";
+}
+
+document.getElementById("greeting").textContent = greeting;
+
+
+document.getElementById("showMoreDetails").addEventListener("click", () => {
+    const details = document.getElementById("car-details");
+    details.style.display = details.style.display === "none" ? "block" : "none";
+  });
+
+  
+
+
+
+
+
+
+// Function to get favorite cars from local storage
+function getFavoriteCars() {
+    const cars = localStorage.getItem("favoriteCars");
+    return cars ? JSON.parse(cars) : [];
+  }
+  
+  // Function to save favorite cars to local storage
+  function saveFavoriteCars(cars) {
+    localStorage.setItem("favoriteCars", JSON.stringify(cars));
+  }
+  
+  // Function to add a car to the favorite cars list
+  function addCarToList(car) {
+    const carList = document.getElementById("carList1");
+    const li = document.createElement("li");
+    li.textContent = car;
+    carList.appendChild(li);
+  }
+  
+  // Function to display all favorite cars
+  function displayFavoriteCars() {
+    const favoriteCars = getFavoriteCars();
+    const carList = document.getElementById("carList1");
+    carList.innerHTML = ""; // Clear existing list
+    favoriteCars.forEach(addCarToList);
+  }
+  
+  // Event listener for the form submission
+  document.getElementById("carForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const carInput = document.getElementById("carInput");
+    const newCar = carInput.value.trim();
+  
+    if (newCar) {
+      // Get current list, add new car, save to storage, and display updated list
+      const favoriteCars = getFavoriteCars();
+      favoriteCars.push(newCar);
+      saveFavoriteCars(favoriteCars);
+      addCarToList(newCar);
+      carInput.value = ""; // Clear input field
+    }
+  });
+  
+  // Display the favorite cars list on page load
+  displayFavoriteCars();
+  
+  
+  const apiKey = "3a8a561cacf5a54aaf1cfe06";
+  const baseUrl = "https://v6.exchangerate-api.com/v6";
+  
+  async function fetchExchangeRate(toCurrency) {
+    const response = await fetch(`${baseUrl}/${apiKey}/latest/USD`);
+    if (!response.ok) throw new Error("Failed to fetch exchange rate");
+    const data = await response.json();
+    return data.conversion_rates[toCurrency];
+  }
+  
+  function displayConversion(priceInUSD, rate, currency) {
+    const convertedPrice = (priceInUSD * rate).toFixed(2);
+    document.getElementById("convertedPrice").textContent = `${convertedPrice} ${currency}`;
+    document.getElementById("conversionResult").style.display = "block";
+  }
+  
+  document.getElementById("currencyForm").addEventListener("submit", async function (event) {
+    event.preventDefault();
+    const priceInUSD = parseFloat(document.getElementById("priceInput").value);
+    const toCurrency = document.getElementById("currencySelect").value;
+  
+    try {
+      const exchangeRate = await fetchExchangeRate(toCurrency);
+      displayConversion(priceInUSD, exchangeRate, toCurrency);
+    } catch (error) {
+      alert(error.message);
+    }
+  });
+  

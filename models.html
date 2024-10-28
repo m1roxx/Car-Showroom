@@ -42,11 +42,11 @@
       </div>
     </nav>
 
-    
+    <h2 id="greeting" style="margin: 20px; padding: 20px;"></h2>
 
     <div class="container my-5 my-lg-6">
       <div class="row">
-          <div class="col-md-6 col-sm-2 col-lg-4 " >
+          <div class="col-md-6 col-sm-2 col-lg-4" >
               <div class="card">
                   <img src="https://car-images.bauersecure.com/wp-images/160900/cullinan_bb_s2_53.jpg" class="card-img-top" alt="Rolls-Royce Cullinan">
                   <div class="card-body">
@@ -54,6 +54,14 @@
                       <p class="card-text">Цена: $390,890</p>
                       <a href="contact.html" class="btn btn-primary">Order now</a>
                       <a href="contact.html" class="btn btn-secondary">Demo drive</a>
+                      
+                      <button id="showMoreDetails" style="margin: 10px; border-radius: 15px; background-color: rgb(0, 180, 30);">Show More Details</button>
+                      <div id="car-details" style="display: none;">
+                      <h3>Car Details</h3>
+                      <p>Horse Power: 670 hp</p>
+                      <p>Price: $680,000</p>
+                      <p>Engine: W12 6.7L</p>
+                      </div>
                   </div>
               </div>
           </div>
@@ -65,6 +73,9 @@
                       <p class="card-text">Цена: $390,890</p>
                       <a href="contact.html" class="btn btn-primary">Order now</a>
                       <a href="contact.html" class="btn btn-secondary">Demo drive</a>
+
+                  
+
                   </div>
               </div>
           </div>
@@ -86,13 +97,54 @@
     <p>Our showroom features the latest luxury cars with advanced technology, ...</p>
     <p id="more-info" style="display: none;">
       superior comfort, and outstanding performance. Visit us to experience driving excellence. <br>
-      <img src="media/carshowroom.webp" style="height: 350px;" alt="carshowroom">
+      <img src="media/carshowroom.webp" style="height: 350px; border-style:groove; border-color: red ;" alt="carshowroom">
     </p>
     
     <button id="read-more-btn" style="border-radius: 20px;">Read More</button>
   </section>
 
+<div class="model-specs">
+  <h1>Favorite Cars List</h1>
   
+<form id="carForm">
+  <label for="carInput">Enter your favorite car:</label>
+  <input type="text" id="carInput" style="width: 800px;" required>
+  <button type="submit" style="width: 200px; margin-top: 15px; border-radius: 15px; background-color: rgb(185, 0, 214);">Add Car</button>
+</form>
+</div>
+
+  <h2>Your Favorite Cars:</h2>
+  <ul id="carList1"></ul>
+    
+
+  
+
+  <form id="currencyForm" class="converter">
+    <h1>Currency Converter</h1>
+    <label for="priceInput">Enter Car Price in USD:</label>
+    <input type="number" id="priceInput" required>
+    <br>
+    <label for="currencySelect">Convert to:</label>
+    <select id="currencySelect">
+      <option value="KZT">Tenge (KAZ)</option>
+      <option value="RUB">Рубли (RUB)</option>
+      <option value="EUR">Euro (EUR)</option>
+      <option value="GBP">British Pound (GBP)</option>
+      <option value="JPY">Japanese Yen (JPY)</option>
+      
+    </select>
+    <button type="submit" style="width: 200px; margin-top: 15px; border-radius: 15px; background-color: rgb(0, 173, 43);">Convert Price</button>
+
+    <div id="conversionResult" style="display: none; margin-top: 20px;">
+      <h2>Converted Price:</h2>
+      <p id="convertedPrice"></p>
+    </div>
+  </form>
+
+  <br><br>
+
+  
+
 
     <!-- Bootstrap Carousel -->
     <div id="carCarousel" class="carousel slide" data-ride="carousel">
