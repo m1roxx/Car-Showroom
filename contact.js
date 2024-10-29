@@ -1,57 +1,63 @@
 document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('contactForm').addEventListener('submit', function (event) {
-    event.preventDefault();
+  const steps = document.querySelectorAll('.step');
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+  const resetBtn = document.getElementById('resetButton'); // Correct reference for reset button
+  let currentStep = 0;
 
-    document.getElementById('error').textContent = '';
+  function showStep(step) {
+    steps.forEach((s, index) => {
+      s.classList.toggle('active', index === step);
+    });
+    prevBtn.disabled = step === 0;
+    nextBtn.textContent = step === steps.length - 1 ? 'Submit' : 'Next';
+  }
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const password = document.getElementById('password').value.trim();
-    const confirmPassword = document.getElementById('confirmPassword').value.trim();
-    const message = document.getElementById('message').value.trim();
+  nextBtn.addEventListener('click', () => {
+    const currentInputs = steps[currentStep].querySelectorAll('input, textarea');
+    let valid = true;
 
-    if (!name || !email || !password || !confirmPassword || !message) {
-      document.getElementById('error').textContent = 'All fields are required!';
-      return;
+    currentInputs.forEach(input => {
+      if (!input.checkValidity()) {
+        valid = false;
+      }
+    });
+
+    if (valid) {
+      if (currentStep < steps.length - 1) {
+        currentStep++;
+        showStep(currentStep);
+      } else {
+        alert('Form submitted successfully!');
+      }
+    } else {
+      document.getElementById('error').textContent = 'Please fill in all required fields correctly.';
     }
-
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    if (!emailPattern.test(email)) {
-      document.getElementById('error').textContent = 'Please enter a valid email address.';
-      return;
-    }
-
-    if (password.length < 6) {
-      document.getElementById('error').textContent = 'Password must be at least 6 characters long.';
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      document.getElementById('error').textContent = 'Passwords do not match.';
-      return;
-    }
-    
-    alert('Form submitted successfully!');
   });
 
-  document.getElementById('resetButton').addEventListener('click', function () {
+  prevBtn.addEventListener('click', () => {
+    if (currentStep > 0) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  });
+
+  resetBtn.addEventListener('click', function () {
     // Clear all input values
     document.querySelectorAll('input').forEach(input => input.value = '');
     document.getElementById('message').value = '';
-    
+
     // Reset error message
     document.getElementById('error').textContent = '';
-  
-    // Reset step and update the UI
+
+    // Reset the step and update the UI
     currentStep = 0;
     showStep(currentStep);
-  
-    // Re-enable the "Next" button in case it was disabled on submission
-    nextBtn.disabled = false;
   });
-  
-  
 
+  showStep(currentStep);
+});
+  
   document.addEventListener('keydown', function (event) {
     const focusedElement = document.activeElement;
     if (focusedElement.classList.contains('nav-link')) {
@@ -67,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
   });
-});
 
 document.addEventListener('DOMContentLoaded', function () {
   const steps = document.querySelectorAll('.step');
