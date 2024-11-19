@@ -223,3 +223,40 @@ function getFavoriteCars() {
     }
   });
   
+
+
+// Function to allow the drop event
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+// Function to handle the drag start
+function dragStart(event) {
+  event.dataTransfer.setData("text", event.target.id);
+  event.target.classList.add("dragging");
+}
+
+// Function to handle the drop event
+function drop(event) {
+  event.preventDefault();
+  const data = event.dataTransfer.getData("text");
+  const draggedElement = document.getElementById(data);
+  const dropZone = event.target;
+
+  if (dropZone.classList.contains("drop-zone")) {
+      const feedback = dropZone.querySelector(".feedback");
+      const carType = draggedElement.querySelector("p").textContent;
+
+      // Add the car to the appropriate drop zone and show feedback
+      feedback.textContent = `${carType} added!`;
+
+      // Remove the car from its original place
+      draggedElement.style.display = "none"; // Hide the car after being dropped
+  }
+}
+
+// Attach the drag start event to all car models
+const draggableCars = document.querySelectorAll('.draggable');
+draggableCars.forEach(car => {
+  car.addEventListener('dragstart', dragStart);
+});

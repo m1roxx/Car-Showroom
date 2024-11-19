@@ -115,17 +115,8 @@
 
   <h2>Your Favorite Cars:</h2>
   <ul id="carList1"></ul>
-    
-
   
-
-  
-
   <br><br>
-
-  
-
-
     <!-- Bootstrap Carousel -->
     <div id="carCarousel" class="carousel slide" data-ride="carousel">
       <!-- indicators -->
@@ -184,6 +175,43 @@
                 <button id="play-sound-btn" style="background-color: rgb(255, 0, 0); border-radius: 10px;">Play Engine Sound </button>
               </section>
     </div>
+
+
+    <div class="container">
+      <h1>Drag and Drop Car Models</h1>
+
+      <!-- Car models to drag -->
+      <div class="draggable-cars">
+          <div id="car1" class="draggable" draggable="true">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_qFjT7K07XESVdT3V8EviPAs1qewNTLUAVQ&s" alt="Luxury Car">
+              <p>Rolce-Royce</p>
+          </div>
+          <div id="car2" class="draggable" draggable="true">
+              <img src="https://images.drive.ru/i/0/60f7b4176c860038ddae11da" alt="Sport Car">
+              <p>Ferrari SF90</p>
+          </div>
+          <div id="car3" class="draggable" draggable="true">
+              <img src="https://www.motortrend.com/uploads/2021/06/2023-Lucid-Air-Touring-motion-extrior-9.jpg?w=768&width=768&q=75&format=webp" alt="Electric Car">
+              <p>Electro Su max</p>
+          </div>
+      </div>
+
+      <!-- Drop zones -->
+      <div class="drop-zone" id="luxury" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <h3>Luxury Cars</h3>
+          <div class="feedback" id="feedback-luxury"></div>
+      </div>
+
+      <div class="drop-zone" id="sport" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <h3>Sport Cars</h3>
+          <div class="feedback" id="feedback-sport"></div>
+      </div>
+
+      <div class="drop-zone" id="electric" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <h3>Electric Cars</h3>
+          <div class="feedback" id="feedback-electric"></div>
+      </div>
+  </div>
 
 
     <br><br>
