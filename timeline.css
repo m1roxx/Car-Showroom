@@ -89,7 +89,6 @@
     border-radius: 10px;
 }
 
-/* Animation when page loads */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -99,7 +98,6 @@
     }
 }
 
-/* Animation for timeline items when scrolled into view */
 @keyframes slideUp {
     0% {
         opacity: 0;
@@ -111,15 +109,24 @@
     }
 }
 
-/* When the page finishes loading */
 .loaded #loadingScreen {
     opacity: 0;
     pointer-events: none;
 }
 
-/* For fading in each timeline item when scrolled */
 .timeline-item.visible {
     opacity: 1;
     transform: translateY(0);
     animation: slideUp 0.8s forwards;
+}
+
+.navbar-icons a i {
+    color: white;
+    text-decoration: none;
+    font-size: 24px; 
+    margin-right: 15px; 
+}
+
+.navbar-icons a:hover i {
+    color: #f8f9fa;
 }

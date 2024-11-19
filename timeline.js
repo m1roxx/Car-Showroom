@@ -24,3 +24,23 @@ function checkVisibility() {
 
 window.addEventListener('scroll', checkVisibility);
 checkVisibility(); 
+
+
+Highcharts.chart('car-sales-chart', {
+    chart: {
+        type: 'pie'
+    },
+    title: {
+        text: 'Our Car Sales by Brand'
+    },
+    series: [{
+        name: 'Sales',
+        data: [
+            { name: 'Toyota', y: 30 },
+            { name: 'BMW', y: 20 },
+            { name: 'Audi', y: 15 },
+            { name: 'Mercedes', y: 25 },
+            { name: 'Porsche', y: 10 }
+        ]
+    }]
+});
