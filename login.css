@@ -1,0 +1,23 @@
+body {
+    background-image: url(media/contact_background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(3px); 
+    height: 100%;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a i {
+    color: white; 
+    text-decoration: none; 
+}
+  
+a:hover i {
+    color: #f8f9fa; 
+} 

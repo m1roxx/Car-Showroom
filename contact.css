@@ -23,6 +23,15 @@ body {
   filter: brightness(0) invert(1);
 }
 
+a i {
+  color: white; 
+  text-decoration: none; 
+}
+
+a:hover i {
+  color: #f8f9fa; 
+}
+
 .navbar .navbar-nav {
   gap: 20px;
 }
