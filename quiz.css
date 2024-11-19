@@ -67,3 +67,12 @@ button:hover {
     margin-top: 10px;
     font-size: 1em;
 }
+
+a i {
+    color: white; 
+    text-decoration: none; 
+}
+  
+a:hover i {
+    color: #f8f9fa; 
+} 
