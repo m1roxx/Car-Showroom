@@ -26,6 +26,7 @@
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             <li class="nav-item"><a class="nav-link" href="repair.html">Repair and Maintenance</a></li>
             <li class="nav-item"><a class="nav-link" href="quiz.html">Play Quiz</a></li>
+            <li class="nav-item"><a class="nav-link" href="timeline.html">Our Timeline</a></li>
           </ul>
           <div class="navbar-icons ms-auto d-lg-none">
             <i class="bx bx-help-circle text-white mx-2"></i>
@@ -120,27 +121,7 @@
 
   
 
-  <form id="currencyForm" class="converter">
-    <h1>Currency Converter</h1>
-    <label for="priceInput">Enter Car Price in USD:</label>
-    <input type="number" id="priceInput" required>
-    <br>
-    <label for="currencySelect">Convert to:</label>
-    <select id="currencySelect">
-      <option value="KZT">Tenge (KAZ)</option>
-      <option value="RUB">Рубли (RUB)</option>
-      <option value="EUR">Euro (EUR)</option>
-      <option value="GBP">British Pound (GBP)</option>
-      <option value="JPY">Japanese Yen (JPY)</option>
-      
-    </select>
-    <button type="submit" style="width: 200px; margin-top: 15px; border-radius: 15px; background-color: rgb(0, 173, 43);">Convert Price</button>
-
-    <div id="conversionResult" style="display: none; margin-top: 20px;">
-      <h2>Converted Price:</h2>
-      <p id="convertedPrice"></p>
-    </div>
-  </form>
+  
 
   <br><br>
 
@@ -206,6 +187,34 @@
               </section>
     </div>
 
+
+    <br><br>
+    <form id="currencyForm" class="converter">
+      <h1>Currency Converter</h1>
+      <h2>Calculate price of car in list</h2>
+      <label for="priceInput">Enter Car Price in USD:</label>
+      <input type="number" id="priceInput" required>
+      <br>
+      <label for="currencySelect">Convert to:</label>
+      <select id="currencySelect">
+        <option value="KZT">Tenge (KAZ)</option>
+        <option value="RUB">Рубли (RUB)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <option value="GBP">British Pound (GBP)</option>
+        <option value="JPY">Japanese Yen (JPY)</option>
+        
+      </select>
+      <button type="submit" style="width: 200px; margin-top: 15px; border-radius: 15px; background-color: rgb(0, 173, 43);">Convert Price</button>
+  
+      <div id="conversionResult" style="display: none; margin-top: 20px;">
+        <h2>Converted Price:</h2>
+        <p id="convertedPrice"></p>
+      </div>
+    </form>
+
+
+    <br><br>
+
     <label for="sortOption">Sort by:</label>
     <select id="sortOption" onchange="sortCars()">
         <option value="nameAsc">Name (A-Z)</option>
@@ -233,6 +242,8 @@
             
         </tbody>
     </table>
+
+    
 
     <script src="cars.js"></script>
     

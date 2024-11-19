@@ -1,0 +1,125 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 1;
+    z-index: 9999;
+    transition: opacity 1.5s ease-out;
+}
+
+
+.timeline-container {
+    padding: 50px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.timeline-container h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+/* Timeline styling */
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline-item {
+    position: relative;
+    margin: 40px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.timeline-item img {
+    width: 200px;
+    height: 150px;
+    margin-bottom: 15px;
+    border-radius: 30%;
+}
+
+.timeline-item p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.timeline-item[data-year="2010"] {
+    background-color: #e0f7fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.timeline-item[data-year="2015"] {
+    background-color: #ffe082;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.timeline-item[data-year="2018"] {
+    background-color: #81c784;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.timeline-item[data-year="2020"] {
+    background-color: #64b5f6;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.timeline-item[data-year="2024"] {
+    background-color: #ff7043;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Animation when page loads */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animation for timeline items when scrolled into view */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* When the page finishes loading */
+.loaded #loadingScreen {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* For fading in each timeline item when scrolled */
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideUp 0.8s forwards;
+}
