@@ -16,6 +16,15 @@ body {
     background-color: #d4edda;
 }
 
+a i {
+    color: white; 
+    text-decoration: none; 
+}
+  
+a:hover i {
+    color: #f8f9fa; 
+}
+
 #taskInput {
     height: 45px;
 }

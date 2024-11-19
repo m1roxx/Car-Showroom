@@ -92,6 +92,15 @@ html, body {
   cursor: pointer;
 }
 
+a i {
+  color: white; 
+  text-decoration: none; 
+}
+
+a:hover i {
+  color: #f8f9fa; 
+}
+
 .buttons button:first-child {
   background-color: #000;
   color: #fff;
