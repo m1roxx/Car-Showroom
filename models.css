@@ -253,3 +253,12 @@ body.dark-theme .model-specs{
 body.dark-theme th{
   background-color: #222222;
 }
+
+.converter{
+  border: 1px solid #ccc;
+  padding: 1em;
+  width: 30%;
+  background-color: rgb(239, 239, 239);
+  border-radius: 15px;
+  margin-left: 500px;
+}
