@@ -63,11 +63,15 @@ a:hover i {
 }
 
 footer {
-  color: #fff;
-  position: relative;
+  position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #343a40; 
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 1000;
 }
 
 .step {
